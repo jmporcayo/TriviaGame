@@ -2,13 +2,14 @@ console.log("hello");
 
 //$(function() {});
 
-var seconds = 30;
+
 var questions = ["How many Power Rangers were in the first 5 episodes?", "What high school did they go to?", "Who is the first villan they encounter?", "Who is the leader?", "What are they constantly fighting in the first season?", "What is their mentors name?", "It's ???????? time!", "What is their combines zords called?"];
 var answers = [["5", "2", "8", "6"], ["Lawndale","Angel Grove","Hogwarts","Northshore"], ["Darth Vader", "Zedd", "Rita Repulsa", "Magneto"], ["Tommy","Zack","Jason","Billy"], ["Z Putties", "Tenga Warriors", "Sting Wingers", "Putty Patrol"], ["Zordan","Bulk","Skull","Alpha"], ["Butt Kicking", "Morphing", "Zords", "lunch"], ["Dinozord","Dragonzord","Titanus","Megazord"]];
 var correctAnswers = [" 5", "Angel Grove", "Rita Repulsa", "Jason", "Putty Patrol", "Zordan", "Morphing", "Mega Zord"];
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
+var timerInMs = 15000;
 
 var questionBank = [
     {
@@ -144,21 +145,38 @@ function gradeQuiz(){
 //    // console.log('test')
 // },30000);
 
-var i = 0;
-var inter = setInterval(function() {
-    i++;
-    console.log(i);
-    if (i > 10) {
-        clearInterval(inter);
-    }
-}, 3000)
+// var i = 0;
+// var inter = setInterval(function() {
+//     i++;
+//     console.log(i);
+//     if (i > 10) {
+//         clearInterval(inter);
+//     }
+// }, 3000)
+
 
 
     //30 second delay
 
 
+//      listen click function
+//      30000 
+//      alert .text("TIMES UP!")
 
+// function timesUp () {
+//     $("#timer")
 
+function timesUp() {
+    console.log('times up')
+    alert('Times Up');
+    gradeQuiz();
+}
+
+$("#timer").on("click", function() {
+    //  Set the button alert's timeout to run three seconds after the function's called.
+    var timeout1 = setTimeout(timesUp, timerInMs);
+    $("#timer").html("<h2>" + number + "</h2>");
+})
 
     
    
